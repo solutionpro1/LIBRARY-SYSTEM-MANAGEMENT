@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBRARY SYSTEM MANAGEMENT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Side Navigation -->
+        <nav class="sidenav">
+            <div class="brand">
+                <i class="fas fa-book-open logo-icon"></i>
+                <h1>LIBRARY SYSTEM MANAGEMENT</h1>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> Books</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Members</a></li>
+                <li><a href="#"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search books...">
+                </div>
+                <div class="header-actions">
+                    <div class="current-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span id="today-date">Loading...</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Stats -->
+            <section class="stats-grid">
+                <div class="stat-card primary">
+                    <i class="fas fa-book"></i>
+                    <div>
+                        <h3>Total Books</h3>
+                        <p id="total-books">0</p>
+                    </div>
+                </div>
+                <div class="stat-card success">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Available</h3>
+                        <p id="available-books">0</p>
+                    </div>
+                </div>
+                <div class="stat-card warning">
+                    <i class="fas fa-hand-holding"></i>
+                    <div>
+                        <h3>Borrowed</h3>
+                        <p id="borrowed-books">0</p>
+                    </div>
+                </div>
+                <div class="stat-card danger">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div>
+                        <h3>Overdue</h3>
+                        <p id="overdue-books">0</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Books Section -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Book Collection</h2>
+                    <button class="btn-refresh" id="refresh-books">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+                <div class="books-table-container">
+                    <table id="books-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>ISBN</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="books-list">
+                            <!-- Data will be loaded from API -->
+                            <tr>
+                                <td colspan="5" class="loading-row">Loading books...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
